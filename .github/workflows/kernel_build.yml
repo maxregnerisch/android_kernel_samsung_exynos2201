@@ -1,0 +1,54 @@
+name: Build Samsung Kernel (S906B)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compile Kernel
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential bc bison flex libssl-dev libncurses5-dev libelf-dev python3 python-is-python3 git ccache
+
+      - name: Clone Toolchain (Clang + GCC)
+        run: |
+          git clone --depth=1 https://github.com/ClangBuiltLinux/android-prebuilts-clang.git clang
+          git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git gcc64
+          git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git gcc32
+
+      - name: Set up environment
+        run: |
+          export ARCH=arm64
+          export SUBARCH=arm64
+          export PATH=$GITHUB_WORKSPACE/clang/bin:$PATH
+          export CROSS_COMPILE=$GITHUB_WORKSPACE/gcc64/bin/aarch64-elf-
+          export CROSS_COMPILE_ARM32=$GITHUB_WORKSPACE/gcc32/bin/arm-eabi-
+          export CLANG_TRIPLE=aarch64-linux-gnu-
+
+      - name: Build kernel
+        run: |
+          make clean
+          make distclean
+          export ARCH=arm64
+          export SUBARCH=arm64
+          export PATH=$GITHUB_WORKSPACE/clang/bin:$PATH
+          export CROSS_COMPILE=$GITHUB_WORKSPACE/gcc64/bin/aarch64-elf-
+          export CROSS_COMPILE_ARM32=$GITHUB_WORKSPACE/gcc32/bin/arm-eabi-
+          export CLANG_TRIPLE=aarch64-linux-gnu-
+          make arch/arm64/configs/s5e9925-g0sxxx_defconfig
+          make -j$(nproc) Image dtbo.img
+
+      - name: Archive Kernel Output
+        uses: actions/upload-artifact@v3
+        with:
+          name: kernel-build-output
+          path: |
+            arch/arm64/boot/Image
+            arch/arm64/boot/dts/
