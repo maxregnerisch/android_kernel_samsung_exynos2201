@@ -43,7 +43,7 @@ jobs:
           export CROSS_COMPILE_ARM32=$GITHUB_WORKSPACE/gcc32/bin/arm-eabi-
           export CLANG_TRIPLE=aarch64-linux-gnu-
           make s5e9925-g0sxxx_defconfig
-          make -j$(nproc) Image dtbo.img
+          # make -j$(nproc) Image dtbo.img
 
       - name: Archive Kernel Output
         uses: actions/upload-artifact@v4
@@ -51,4 +51,4 @@ jobs:
           name: kernel-build-output
           path: |
             arch/arm64/boot/Image
-            arch/arm64/boot/dts/
+            # arch/arm64/boot/dts/
