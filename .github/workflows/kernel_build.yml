@@ -19,7 +19,7 @@ jobs:
 
       - name: Clone Toolchain (Clang + GCC)
         run: |
-          git clone --depth=1 https://github.com/ClangBuiltLinux/android-prebuilts-clang.git clang
+          git clone --depth=1 https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b.git clang
           git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git gcc64
           git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git gcc32
 
