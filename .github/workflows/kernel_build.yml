@@ -46,7 +46,7 @@ jobs:
           make -j$(nproc) Image dtbo.img
 
       - name: Archive Kernel Output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: kernel-build-output
           path: |
