@@ -212,3 +212,11 @@ __pycache__/
 descript.ion
 certs/x509_certificate_list
 drivers/gpu/drm/samsung/dpu/exynos-drm.lds
+arch/arm64/kvm/hyp/nvhe/gen-hyprel
+arch/arm64/kvm/hyp/nvhe/hyp-reloc.S
+arch/arm64/kvm/hyp/nvhe/hyp.lds
+scripts/module.lds
+security/samsung/defex_lsm/pack_rules
+security/samsung/proca/proca_certificate.asn1.c
+security/samsung/proca/proca_certificate.asn1.h
+fs/unicode/utf8data.h
