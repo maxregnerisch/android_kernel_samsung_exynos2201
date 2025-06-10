@@ -78,6 +78,7 @@ compile_commands.json
 /toolchain/
 /toolchain-*/ 
 /tools/
+/.thinlto-cache/
 
 # Debug files
 *.dwo
