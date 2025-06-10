@@ -220,3 +220,8 @@ security/samsung/defex_lsm/pack_rules
 security/samsung/proca/proca_certificate.asn1.c
 security/samsung/proca/proca_certificate.asn1.h
 fs/unicode/utf8data.h
+fs/ksmbd/*.asn1*
+lib/crc32table.h
+lib/gen_crc32table
+lib/oid_registry_data.c
+net/wireless/shipped-certs.c
