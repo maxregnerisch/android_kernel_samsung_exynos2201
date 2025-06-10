@@ -1,0 +1,94 @@
+# Build artifacts
+*.o
+*.o.*
+*.a
+*.s
+*.ko
+*.so
+*.so.dbg
+*.mod.c
+*.i
+*.lst
+*.symtypes
+*.order
+modules.builtin
+*.elf
+*.bin
+*.gz
+*.bz2
+*.lzma
+*.xz
+*.lz4
+*.lzo
+*.patch
+*.gcno
+*.ll
+modules.builtin.modinfo
+
+# Build directories
+/out/
+/output/
+/build/
+/.tmp_versions/
+/modules/
+/arch/*/boot/dts/*.dtb
+/arch/*/boot/dts/*.dtbo
+/arch/*/boot/Image
+/arch/*/boot/Image.gz
+/arch/*/boot/zImage
+
+# Development tools and environments
+tags
+TAGS
+cscope.*
+ncscope.*
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+.cache.mk
+.config
+.config.old
+.version
+.mailmap
+.missing-syscalls.d
+.clangd/
+compile_commands.json
+
+# Dependency files
+*.cmd
+.tmp_*
+*.mod
+*.symvers
+*.order
+.*.stamp
+
+# Editor and IDE files
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+.idea/
+*.iml
+.vscode/
+*.sublime-*
+
+# Toolchain directories
+/toolchain/
+/toolchain-*/ 
+/tools/
+
+# Debug files
+*.dwo
+*.debug
+
+# Misc
+*.orig
+*.rej
+*.*~
+\#*#
+.#*
+*.log
+*.bkp
+.DS_Store
