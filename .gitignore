@@ -1,38 +1,138 @@
 # Build artifacts
+*.a
+*.bin
+*.bz2
+*.c.[012]*.*
+*.cmd
+*.cpio*
+*.dtb
+*.dtb.S
+*.dwo
+*.elf
+*.gcno
+*.gz
+*.i
+*.ko
+*.ll
+*.lst
+*.lz4
+*.lzma
+*.lzo
+*.mod.c
 *.o
 *.o.*
-*.a
+*.order
+*.patch
 *.s
-*.ko
 *.so
 *.so.dbg
-*.mod.c
-*.i
-*.lst
+*.su
 *.symtypes
-*.order
-modules.builtin
-*.elf
-*.bin
-*.gz
-*.bz2
-*.lzma
+*.symversions
+*.tar
 *.xz
-*.lz4
-*.lzo
-*.patch
-*.gcno
-*.ll
+*.zip
+Module.symvers
+modules.builtin
 modules.builtin.modinfo
+
+#
+# Top-level generic files
+#
+/tags
+/TAGS
+/linux
+/vmlinux
+/vmlinux.32
+/vmlinux-gdb.py
+/vmlinuz
+/System.map
+/Module.markers
 
 # Build directories
 /out/
 /output/
 /build/
 /.tmp_versions/
+/.thinlto-cache/
 /modules/
-/arch/*/boot/dts/*.dtb
-/arch/*/boot/dts/*.dtbo
+/arch/*/vdso
+
+#specific build artifacts
+arch/arm64/crypto/poly1305-core.S
+arch/arm64/crypto/sha256-core.S
+arch/arm64/crypto/sha256-core.S
+crypto/*.asn1*
+crypto/asymmetric_keys/*.asn1*
+
+usr/gen_init_cpio
+usr/initramfs_inc_data
+
+# Additional build artifacts
+# *.ko.cmd
+# *.o.cmd
+# *.S.cmd
+# *.mod.cmd
+# .version
+# vmlinux.symvers
+# *.ko.unsigned
+# modules.order.cmd
+# built-in.a.cmd
+
+# # Additional temporary files
+# .cache/
+# __pycache__/
+# *.pyc
+# *.pyo
+# *.pyd
+# .pytest_cache/
+
+# Kernel build directories
+/arch/*/boot/dts/*
+/arch/*/kernel/vdso*
+
+#/arch/*/boot/dts/*/*.t*mp
+#/arch/*/boot/dts/*/*.dtb
+#/arch/*/boot/dts/*.dtb
+#/arch/*/boot/dts/*.dtbo
+#/arch/*/crypto*/*.S
+#/arch/*/include/generated/*
+/arch/*/kernel/*.o
+#/arch/*/kernel/*.cmd
+/arch/*/kernel/*.d
+/arch/*/kernel/*.lds
+
+#
+# Generated include files
+#
+include/config
+include/generated
+arch/*/include/generated
+/usr/include/*/*
+
+
+# stgit generated dirs
+patches-*
+
+# quilt's files
+patches
+series
+
+# cscope files
+cscope.*
+ncscope.*
+
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+# Kernel images
+/arch/*/boot/bzImage
+/arch/*/boot/vmlinux
+/arch/*/boot/vmlinux.*
+/arch/*/boot/vmlinux.gz
 /arch/*/boot/Image
 /arch/*/boot/Image.gz
 /arch/*/boot/zImage
@@ -78,11 +178,25 @@ compile_commands.json
 /toolchain/
 /toolchain-*/ 
 /tools/
-/.thinlto-cache/
 
 # Debug files
 *.dwo
 *.debug
+
+# fetched Android config fragments
+kernel/configs/android-*.cfg
+
+# samsung
+*.dtbo
+*.reverse.dts
+__pycache__/
+*.pyc
+
+/*.img
+/config.json
+/config.info
+/config.G*
+/config.N*
 
 # Misc
 *.orig
@@ -93,3 +207,8 @@ compile_commands.json
 *.log
 *.bkp
 .DS_Store
+
+# Specific files
+descript.ion
+certs/x509_certificate_list
+drivers/gpu/drm/samsung/dpu/exynos-drm.lds
