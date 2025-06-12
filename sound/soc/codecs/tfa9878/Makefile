@@ -22,7 +22,7 @@ endif
 
 # cc flags
 #ccflags-y              := -DDEBUG
-ccflags-y               += -Werror
+ccflags-y               += -Wno-error
 ifdef TFA_STEREO_NODE
 ccflags-y               += -DTFA_STEREO_NODE
 endif
