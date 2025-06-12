@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: GPL-2.0
 VERSION = 5
-PATCHLEVEL = 10
-SUBLEVEL = 223
-EXTRAVERSION =
-NAME = Dare mighty things
+PATCHLEVEL = 15
+SUBLEVEL = 170
+EXTRAVERSION = -mrkernel
+NAME = mrkernel - Maximum Performance
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"

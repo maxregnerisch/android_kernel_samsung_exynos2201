@@ -37,11 +37,11 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(sched_stat_runtime);
  * (to see the precise effective timeslice length of your workload,
  *  run vmstat and monitor the context-switches (cs) field)
  *
- * (default: 6ms * (1 + ilog(ncpus)), units: nanoseconds)
+ * (mrkernel: optimized 4ms * (1 + ilog(ncpus)), units: nanoseconds)
  */
-unsigned int sysctl_sched_latency			= 6000000ULL;
+unsigned int sysctl_sched_latency			= 4000000ULL;
 EXPORT_SYMBOL_GPL(sysctl_sched_latency);
-static unsigned int normalized_sysctl_sched_latency	= 6000000ULL;
+static unsigned int normalized_sysctl_sched_latency	= 4000000ULL;
 
 /*
  * The initial- and re-scaling of tunables is configurable
