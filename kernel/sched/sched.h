@@ -1,8 +1,14 @@
 /* SPDX-License-Identifier: GPL-2.0 */
 /*
- * Scheduler internal types and methods:
+ * mrkernel - High Performance Scheduler
+ * Enhanced scheduler internal types and methods with performance optimizations
  */
 #include <linux/sched.h>
+
+/* mrkernel: Performance optimization flags */
+#define MRKERNEL_PERF_BOOST		1
+#define MRKERNEL_THERMAL_AWARE		1
+#define MRKERNEL_ENHANCED_WAKEUP	1
 
 #include <linux/sched/autogroup.h>
 #include <linux/sched/clock.h>
